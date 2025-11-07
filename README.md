@@ -1,48 +1,15 @@
-Python Project Template
-=======================
+Goodbye Things
+==============
 
-You can use this repository as a template when creating a new repository on GitHub, to get my preferred setup for a Python project.
+I use the code in this project to **reduce the time it takes to post an eBay listing** for the things I no longer want or need.
 
-After creating the new project, there are a few things you'll need to configure.
+The name is a hat tip to the book [Goodbye, Things] by Fumio Sasaki.
 
-## Rename the main package
-
-You'll need to rename the package from "mylib" to something sensible:
-
-```sh
-git mv mylib newname
-sed -i='' -e 's/mylib/newname/' tests/* .projections.json
-```
-
-## Choosing the Python version
-
-The version of Python that your project uses is needed by the GitHub Action that runs the tests, and perhaps by your local Python installation tool.
-
-You can create it like this:
-
-```sh
-echo 3.11.3 > .python-version  # 3.11.3 is just an example
-```
-
-## Reviewing the license
-
-The open source MIT license is used by default (see the [LICENSE] file). [Is it appropriate](https://choosealicense.com/) for this project?
-
-If you do stick with the MIT license, don't forget to set the year and the name of the copyright holder. If you're on Linux you can do it quickly by copying/pasting this snippet into your shell:
-
-```sh
-sed -i='' -e "s,<YEAR>,$(date +%Y)," LICENSE
-FULL_NAME="$(getent passwd $USER | cut -d : -f 5 | cut -d , -f 1)"
-sed -i='' -e "s,<COPYRIGHT HOLDER>,$FULL_NAME," LICENSE
-```
-
-Otherwise, just edit [LICENSE].
-
-[LICENSE]: ./LICENSE
+[Goodbye, Things]: https://www.penguin.co.uk/books/305840/goodbye-things-by-sasaki-fumio/9780141986388
 
 ## Run the tests locally
 
-You need to get everything installed, and that first test running. Start by creating a virtual environment:
+You need to get everything installed, then the tests should pass. Start by creating a virtual environment:
 
 ```sh
 python3 -m venv .venv
@@ -78,7 +45,3 @@ If you want to add more development tools, add them to `dev-requirements.in` and
 pip-compile dev-requirements.in
 pip-sync requirements.txt dev-requirements.txt
 ```
-
-## Update the README
-
-Now delete all the docs that you've just followed, and write something suitable for your new project!
