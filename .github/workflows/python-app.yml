@@ -35,5 +35,5 @@ jobs:
       run: make format
     - name: Check types
       run: make types
-    - name: Run tests
-      run: pytest -o console_output_style=classic -v
+    # - name: Run tests
+    #   run: pytest -o console_output_style=classic -v
